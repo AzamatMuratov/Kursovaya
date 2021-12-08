@@ -1,5 +1,4 @@
 package com.company;
-import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class credit extends depozit implements Interface{
@@ -11,12 +10,27 @@ public class credit extends depozit implements Interface{
         double mesyachnaya_pereplata;
         Scanner sc = new Scanner(System.in);
         double years = sc.nextDouble();
+        if (years <= 0) {
+            System.out.println("Срок не может быть меньше или равен нулю.");
+            System.out.println("Начните заново!");
+            return;
+        }
         years *= 12;
         System.out.print("Введите процентную ставку -");
         double I = sc.nextDouble();
+        if (I <= 0) {
+            System.out.println("Процентная ставка не может быть меньше или равна нулю.");
+            System.out.println("Начните заново!");
+            return;
+        }
         I /= 100;
         System.out.print("Введите сумму кредита -");
         int P = sc.nextInt();
+        if (years <= 0) {
+            System.out.println("Сумма кредита не может быть меньше или равна нулю.");
+            System.out.println("Начните заново!");
+            return;
+        }
         double MonthPay;
         MonthPay = (P + (P * I)) / years;
         System.out.println("Ежемесячная оплата = " + MonthPay);

@@ -11,13 +11,13 @@ public class depozit implements Interface {
         Scanner sc = new Scanner(System.in);
         double years = sc.nextDouble();
         if (years <= 0) {
-            System.out.println("Срок не может быть меньше нуля");
+            System.out.println("Срок не может быть меньше или равен нулю.");
             return;
         }
         System.out.print("Введите процентную ставку - ");
         double I = sc.nextDouble();
         if (I <= 0) {
-            System.out.println("Процентная ставка не может быть меньше нуля");
+            System.out.println("Процентная ставка не может быть меньше или равна нулю.");
             return;
         }
         int P;
