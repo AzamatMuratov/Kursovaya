@@ -3,6 +3,11 @@ package com.company;
 import java.util.Scanner;
 
 public class depozit implements Interface {
+    private String goal1;
+
+    public depozit(String goal){
+        this.goal1 = goal;
+    }
     public void srok(){
         System.out.print("Введите срок в годах - ");
     }
@@ -34,9 +39,17 @@ public class depozit implements Interface {
         }
         S = (P * I * (years * 365) / 365) / 100;
         System.out.println("Доход за все время = " + S);
+
     }
     public void vyvod(){
         System.out.println("Начинается код депозита!");
     }
 
+    public String getName() {
+        return goal1;
+    }
+
+    public void setName(String name) {
+        this.goal1 = goal1;
+    }
 }
